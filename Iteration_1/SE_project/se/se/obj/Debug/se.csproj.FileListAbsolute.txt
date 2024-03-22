@@ -1,0 +1,38 @@
+M:\se\se\bin\Debug\se.exe.config
+M:\se\se\bin\Debug\se.exe
+M:\se\se\bin\Debug\se.pdb
+M:\se\se\bin\Debug\MySql.Data.dll
+M:\se\se\bin\Debug\System.Memory.dll
+M:\se\se\bin\Debug\System.Threading.Tasks.Extensions.dll
+M:\se\se\bin\Debug\System.Numerics.Vectors.dll
+M:\se\se\bin\Debug\System.Buffers.dll
+M:\se\se\bin\Debug\MySql.Data.xml
+M:\se\se\obj\Debug\se.csproj.AssemblyReference.cache
+M:\se\se\obj\Debug\se.csproj.SuggestedBindingRedirects.cache
+M:\se\se\obj\Debug\se.Properties.Resources.resources
+M:\se\se\obj\Debug\se.csproj.GenerateResource.cache
+M:\se\se\obj\Debug\se.csproj.CoreCompileInputs.cache
+M:\se\se\obj\Debug\se.csproj.CopyComplete
+M:\se\se\obj\Debug\se.exe
+M:\se\se\obj\Debug\se.pdb
+M:\se\se\obj\Debug\se.LoginForm.resources
+M:\se\se\obj\Debug\se.Form2.resources
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\se.exe.config
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\se.exe
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\se.pdb
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\MySql.Data.dll
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\System.Memory.dll
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\System.Buffers.dll
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\bin\Debug\MySql.Data.xml
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.LoginForm.resources
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.Form2.resources
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.Properties.Resources.resources
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.csproj.CopyComplete
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.exe
+C:\Users\HP\Desktop\New folder\se musfirah\se\se\obj\Debug\se.pdb
