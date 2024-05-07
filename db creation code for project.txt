@@ -1,0 +1,204 @@
+create database se;
+
+-- Users Table
+CREATE TABLE se.Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255),
+    role ENUM('member', 'head', 'mentor'),
+    identification_key INT
+);
+
+-- Societies Table
+CREATE TABLE se.Societies (
+    society_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    mentor_id INT,
+    FOREIGN KEY (mentor_id) REFERENCES Users(user_id)
+);
+
+-- SocietyMemberships Table
+CREATE TABLE se.SocietyMemberships (
+    membership_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    society_id INT,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (society_id) REFERENCES Societies(society_id)
+);
+
+-- Announcements Table
+CREATE TABLE se.Announcements (
+    announcement_id INT AUTO_INCREMENT PRIMARY KEY,
+    content TEXT,
+    posted_by INT,
+    visible_to_all BOOLEAN,
+    society_id INT,
+    FOREIGN KEY (posted_by) REFERENCES Users(user_id),
+    FOREIGN KEY (society_id) REFERENCES Societies(society_id)
+);
+-- Events Table
+CREATE TABLE se.Events (
+    event_id INT AUTO_INCREMENT PRIMARY KEY,
+    society_id INT,
+    title VARCHAR(255),
+    description TEXT,
+    status ENUM('pending', 'approved', 'rejected'),
+    created_by INT,
+   FOREIGN KEY (society_id) REFERENCES Societies(society_id),
+    FOREIGN KEY (created_by) REFERENCES Users(user_id)
+);
+
+-- Feedbacks Table
+CREATE TABLE se.Feedbacks (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT,
+    content TEXT,
+    provided_by INT,
+    FOREIGN KEY (event_id) REFERENCES Events(event_id),
+    FOREIGN KEY (provided_by) REFERENCES Users(user_id)
+);
+-- Tasks Table
+CREATE TABLE se.Tasks (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    society_id INT,
+    assigned_to INT,
+    description TEXT,
+    progress ENUM('30%', '70%', '100%'),
+    details TEXT,
+    FOREIGN KEY (society_id) REFERENCES Societies(society_id),
+    FOREIGN KEY (assigned_to) REFERENCES Users(user_id)
+);
+
+
+INSERT INTO se.Users (email, password, role, identification_key) VALUES 
+-- Inserting mentors for the societies
+('mentor1@fast.edu', 'password', 'mentor', 100),
+('mentor2@fast.edu', 'password', 'mentor', 101),
+('mentor3@fast.edu', 'password', 'mentor', 102),
+-- Inserting extra mentors
+('mentor4@fast.edu', 'password', 'mentor', 103),
+('mentor5@fast.edu', 'password', 'mentor', 104),
+('mentor6@fast.edu', 'password', 'mentor', 105),
+('mentor7@fast.edu', 'password', 'mentor', 106),
+('mentor8@fast.edu', 'password', 'mentor', 107),
+('mentor9@fast.edu', 'password', 'mentor', 108),
+('mentor10@fast.edu', 'password', 'mentor', 109),
+('mentor11@fast.edu', 'password', 'mentor', 110),
+('mentor12@fast.edu', 'password', 'mentor', 111),
+('mentor13@fast.edu', 'password', 'mentor', 112),
+('mentor14@fast.edu', 'password', 'mentor', 113),
+('mentor15@fast.edu', 'password', 'mentor', 114),
+('mentor16@fast.edu', 'password', 'mentor', 115),
+('mentor17@fast.edu', 'password', 'mentor', 116),
+-- Inserting society heads for each society
+('head1@fast.edu', 'password', 'head', 1000),
+('head2@fast.edu', 'password', 'head', 1001),
+('head3@fast.edu', 'password', 'head', 1002),
+-- Inserting extra society heads
+('head4@fast.edu', 'password', 'head', 1003),
+('head5@fast.edu', 'password', 'head', 1004),
+('head6@fast.edu', 'password', 'head', 1005),
+('head7@fast.edu', 'password', 'head', 1006),
+('head8@fast.edu', 'password', 'head', 1007),
+-- Inserting members for each society
+('member1@fast.edu', 'password', 'member', 10000),
+('member2@fast.edu', 'password', 'member', 10001),
+('member3@fast.edu', 'password', 'member', 10002),
+('member4@fast.edu', 'password', 'member', 10003),
+('member5@fast.edu', 'password', 'member', 10004),
+('member6@fast.edu', 'password', 'member', 10005),
+('member7@fast.edu', 'password', 'member', 10006),
+('member8@fast.edu', 'password', 'member', 10007),
+('member9@fast.edu', 'password', 'member', 10008),
+('member10@fast.edu', 'password', 'member', 10009),
+('member11@fast.edu', 'password', 'member', 10010),
+('member12@fast.edu', 'password', 'member', 10011),
+('member13@fast.edu', 'password', 'member', 10012),
+('member14@fast.edu', 'password', 'member', 10013),
+('member15@fast.edu', 'password', 'member', 10014),
+('member16@fast.edu', 'password', 'member', 10015),
+('member17@fast.edu', 'password', 'member', 10016),
+('member18@fast.edu', 'password', 'member', 10017),
+('member19@fast.edu', 'password', 'member', 10018),
+('member20@fast.edu', 'password', 'member', 10019),
+('member21@fast.edu', 'password', 'member', 10020),
+('member22@fast.edu', 'password', 'member', 10021),
+('member23@fast.edu', 'password', 'member', 10022),
+('member24@fast.edu', 'password', 'member', 10023),
+('member25@fast.edu', 'password', 'member', 10024),
+('member26@fast.edu', 'password', 'member', 10025),
+('member27@fast.edu', 'password', 'member', 10026),
+('member28@fast.edu', 'password', 'member', 10027),
+('member29@fast.edu', 'password', 'member', 10028),
+('member30@fast.edu', 'password', 'member', 10029),
+('member31@fast.edu', 'password', 'member', 10030),
+('member32@fast.edu', 'password', 'member', 10031),
+('member33@fast.edu', 'password', 'member', 10032),
+('member34@fast.edu', 'password', 'member', 10033),
+('member35@fast.edu', 'password', 'member', 10034),
+('member36@fast.edu', 'password', 'member', 10035),
+('member37@fast.edu', 'password', 'member', 10036),
+('member38@fast.edu', 'password', 'member', 10037),
+('member39@fast.edu', 'password', 'member', 10038),
+('member40@fast.edu', 'password', 'member', 10039);
+
+INSERT INTO se.Societies (name, mentor_id) VALUES 
+('FAST Computing Society', (SELECT user_id FROM se.Users WHERE email = 'head1@fast.edu')),
+('FAST Art Society', (SELECT user_id FROM se.Users WHERE email = 'head2@fast.edu')),
+('FAST Debating Society', (SELECT user_id FROM se.Users WHERE email = 'head3@fast.edu'));
+
+
+-- Society Head and Members for FAST Computing Society
+INSERT INTO se.SocietyMemberships (user_id, society_id) VALUES 
+((SELECT user_id FROM se.Users WHERE email = 'head1@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member1@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member2@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member3@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member4@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member5@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society')),
+((SELECT user_id FROM se.Users WHERE email = 'mentor1@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Computing Society'));
+
+-- Society Head and Members for FAST Art Society
+INSERT INTO se.SocietyMemberships (user_id, society_id) VALUES 
+((SELECT user_id FROM se.Users WHERE email = 'head2@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member6@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member7@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member8@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member9@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member10@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society')),
+((SELECT user_id FROM se.Users WHERE email = 'mentor2@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Art Society'));
+
+-- Society Head and Members for FAST Debating Society
+INSERT INTO se.SocietyMemberships (user_id, society_id) VALUES 
+((SELECT user_id FROM se.Users WHERE email = 'head3@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member11@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member12@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member13@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member14@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society')),
+((SELECT user_id FROM se.Users WHERE email = 'member15@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society')),
+((SELECT user_id FROM se.Users WHERE email = 'mentor3@fast.edu'), (SELECT society_id FROM se.Societies WHERE name = 'FAST Debating Society'));
+
+
+
+
+
+
+INSERT INTO se.announcements (content, posted_by, visible_to_all,society_id) VALUES 
+("Join us for a deep dive into the world of Artificial Intelligence and Machine Learning. Explore the future of tech with us!", 1, TRUE,1),
+("Don't miss our upcoming webinar on the fundamentals of Cloud Computing. Discover how cloud services are transforming the IT landscape.", 2, TRUE,1),
+("Inviting all students to participate in our annual Hackathon. Showcase your coding skills and innovative ideas!", 3, TRUE,1),
+("A new course on Blockchain technology is now available. Learn how blockchain is revolutionizing security and transactions.", 4, TRUE,2),
+("Interested in cybersecurity? Our next session covers the latest trends and defense mechanisms against cyber attacks.", 5, TRUE,2),
+("Our Computer Science department is excited to announce a series of workshops on Python programming. Beginners welcome!", 6, TRUE,1),
+("Explore the possibilities of Virtual Reality at our upcoming seminar. From gaming to education, see how VR is changing the world.", 7, TRUE,3),
+("Learn about the importance of data structures and algorithms in our next lecture. Essential knowledge for all programming enthusiasts.", 8, TRUE,1),
+("We're launching a new project on developing intelligent bots. Join us to contribute to cutting-edge technology!", 9, TRUE,2),
+("Discover the power of Big Data analytics and how it's used to make informed decisions. A must-know for aspiring data scientists.", 10, TRUE,3);
+
+
+
+
+
+
+
+
